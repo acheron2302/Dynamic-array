@@ -72,8 +72,10 @@ void vectorSet(Vector *vector, unsigned index, int element) {
 // @param index: the index to get back the Vector
 // @return a int that assign to that array location
 int vectorGet(Vector *vector, unsigned index) {
-    if (index < vector->size)
+    if (index < vector->size && index >=0)
         return vector->data[index];
+    printf("Error: Vector is out of bound\n");
+    exit(1);
 }
 
 // Return the number of element in the vector
